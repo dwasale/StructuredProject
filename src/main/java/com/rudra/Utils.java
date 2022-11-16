@@ -65,7 +65,7 @@ public class Utils extends BasePage{
     //This method Webdriver wait function by url properties
     public void waitForUrlToBe(String url, int time){
         WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(time));   //Instantiating Webdriver wait by seconds
-        wait.until(ExpectedConditions.urlToBe(url));    //urlT
+        wait.until(ExpectedConditions.urlToBe(url));    //urlToBe called by given url
 
     }
 }
