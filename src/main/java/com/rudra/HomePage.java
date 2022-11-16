@@ -16,8 +16,8 @@ public class HomePage extends Utils {
 
     //Method to click on the given element
     public void toClickRegisterLinkButton(){
-        clickOnElement(_registerLink);
         waitElementToBeClickable(_registerLink,200);
+        clickOnElement(_registerLink);
     }
 
 }
