@@ -3,7 +3,7 @@ package com.rudra;
 import org.openqa.selenium.By;
 import org.testng.Assert;
 
-public class RegisterResultPage extends Utils{
+public class RegisterResultPage extends Utils {
 
     // Declaring By variable and storing the path of unique locator as private
     private By _resultMessage = By.className("result");
@@ -13,7 +13,7 @@ public class RegisterResultPage extends Utils{
 //    }
 
     // This method will compare the expected and actual result after successful registration
-    public void toCheckConfirmationMessage(){
+    public void toCheckConfirmationMessage() {
         Assert.assertEquals(getText(_resultMessage), "Your registration completed", "Expected and Actual result didn't match");
     }
 }

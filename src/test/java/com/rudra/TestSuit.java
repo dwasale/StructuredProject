@@ -10,25 +10,37 @@ public class TestSuit extends BaseTest {
     RegisterPage registerPage = new RegisterPage();
     //RegisterResultPage class instantiation to access all the methods by calling its given name
     RegisterResultPage registerResultPage = new RegisterResultPage();
-
+    ElectronicsPage electronicsPage = new ElectronicsPage();
+    CameraAndPhotoPage cameraAndPhotoPage = new CameraAndPhotoPage();
 //    @Test
 //    public void toVerifyNewUserRegistrationSuccessful(){
 //
 //    }
 
     //This test method calls all the methods to register new user successfully
-    @Test
+    @Test (priority = 1)
     public void toVerifyRegisterButtonPresentInHomePageAndRegisteringNewUser(){
-        homePage.toVerifyRegisterButtonPresent();   //Calling toVerifyRegistrationButtonPresent from HomePage class by calling its instantiated name and execute its code
-        homePage.toClickRegisterLinkButton();   //Calling toClickRegisterLinkButton from HomePage class by calling its instantiated name and execute the method
-        registerPage.toFillTheRegistrationForm();   //Calling toFillTheRegistrationForm from HomePage class by calling its instantiated name and perform its action of that method
-        registerResultPage.toCheckConfirmationMessage();    //Calling toCheckConfirmationMessage from HomePage class by calling its instantiated name and perform its function
-//        registerResultPage.toCheckRegistrationIsSuccessful();   //Calling toCheckRegistrationIsSuccessful from HomePage class by calling its instantiated name and perform its intended action to be
+        //Calling toVerifyRegistrationButtonPresent from HomePage class by calling its instantiated name and execute its code
+        homePage.toVerifyRegisterButtonPresent();
+        //Calling toClickRegisterLinkButton from HomePage class by calling its instantiated name and execute the method
+        homePage.toClickRegisterLinkButton();
+        //Calling toFillTheRegistrationForm from HomePage class by calling its instantiated name and perform its action of that method
+        registerPage.toFillTheRegistrationForm();
+        //Calling toCheckConfirmationMessage from HomePage class by calling its instantiated name and perform its function
+        registerResultPage.toCheckConfirmationMessage();
+        //Calling toCheckRegistrationIsSuccessful from HomePage class by calling its instantiated name and perform its intended action to be
+//        registerResultPage.toCheckRegistrationIsSuccessful();
 
     }
 
-//    @Test
-//    public void toClickOnRegisterLinkButton(){
-//        homePage.toClickRegisterLinkButton();
-//    }
+    @Test
+    public void toVerifyEachProductHasName(){
+        //Be in home page
+        //Go to Electronics page
+        electronicsPage.toClickOnElectronicsPage();
+        //Under electronics page go to camera and photo
+        cameraAndPhotoPage.toClickOnCameraPhotoPage();
+        //Get all the products name from it
+        cameraAndPhotoPage.toGetAllTheNamesOfProductsFromCameraAndPhotoPage();
+    }
 }
